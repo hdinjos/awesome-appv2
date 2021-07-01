@@ -10,7 +10,7 @@
         </div>
         <div class="wrapping-input">
           <div class="label-input">Password</div>
-          <input v-model="password" type="text" placeholder="fkFJDf23%2" />
+          <input v-model="password" type="password" placeholder="fkFJDf23%2" />
         </div>
         <div class="wrapping-input">
           <button @click="toLogin" class="btn-submit">Login</button>

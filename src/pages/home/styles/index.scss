@@ -3,10 +3,35 @@
   // border: 1px solid blue;
   // width: 100vw;
   height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  width: 50%;
+  height: 50%;
+}
+
+.wrap-img {
+  margin: 20px 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .top-write {
-  margin-top: 20px;
+  // margin-top: 20px;
   text-align: center;
-  font-size: 2em;
+  font-size: 20px;
+}
+
+.txt-group {
+  border: 1px solid black;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.welcome {
+  font-size: 28px;
+  color: rgb(118, 112, 112);
 }
