@@ -6,3 +6,11 @@ export const login = async (payload) => {
   const res = await api.post("auth/login", payload);
   return res.data;
 };
+
+export const getUserInfo = async (token) => {
+  const headers = {
+    "x-access-token": token,
+  };
+  const res = await api.get("auth/check", { headers });
+  return res.data;
+};

@@ -29,8 +29,6 @@
 </template>
 
 <script>
-import { login } from "../../services/auth";
-
 export default {
   data: () => ({
     username: "",
@@ -44,15 +42,19 @@ export default {
           username: this.username,
           password: this.password,
         };
-        const res = await login(payload);
-        console.log(res);
+        await this.$store.dispatch("auth/toLogin", payload);
+        const admin = this.$store.state.auth.userInfo.info.admin;
+        if (admin) {
+          this.$router.push("/admin");
+        } else {
+          this.$router.push("/");
+        }
       } catch (err) {
         if (err?.response?.status) {
           this.err = "username and password isn't suitable!";
         } else {
           this.err = err.message;
         }
-        // console.log();
       }
     },
   },
