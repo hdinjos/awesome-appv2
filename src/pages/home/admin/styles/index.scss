@@ -1,0 +1,26 @@
+.container {
+  margin: 0 5%;
+  // border: 1px solid blue;
+  // width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-write {
+  margin-top: 20px;
+  // text-align: center;
+  font-size: 2em;
+}
+
+.table {
+  // text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
+.second-text {
+  margin: 10px 0;
+}
