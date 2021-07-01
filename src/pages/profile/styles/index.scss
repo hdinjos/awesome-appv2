@@ -1,0 +1,18 @@
+.container {
+  margin: 0 5%;
+  // border: 1px solid blue;
+  // width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.top-write {
+  margin: 20px 0;
+  font-size: 2em;
+  border-bottom: 1px solid #000;
+}
+
+.wrap-txt {
+  font-size: 20px;
+}

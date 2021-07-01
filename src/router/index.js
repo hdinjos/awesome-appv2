@@ -11,6 +11,14 @@ const routes = [
     component: Home,
   },
   {
+    path: "/profile",
+    name: "profile",
+    component: () =>
+      import(
+        /* webpackChunkName: "admin-profile" */ "../pages/profile/index.vue"
+      ),
+  },
+  {
     path: "/auth",
     name: "auth",
     children: [
@@ -35,6 +43,14 @@ const routes = [
     name: "admin",
     component: () =>
       import(/* webpackChunkName: "admin" */ "../pages/home/admin/index.vue"),
+  },
+  {
+    path: "/admin/profile",
+    name: "admin-profile",
+    component: () =>
+      import(
+        /* webpackChunkName: "admin-profile" */ "../pages/profile/index.vue"
+      ),
   },
 ];
 

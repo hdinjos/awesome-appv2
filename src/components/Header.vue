@@ -7,11 +7,11 @@
       <div class="right">
         <div class="profile" @click="changeOpen">Account</div>
         <div class="wrap-account" v-if="isOpen">
-          <div class="btn-1">
+          <div class="btn-1" @click="toProfile">
             Profile
             <!-- <button>Profile</button> -->
           </div>
-          <div class="btn-1">
+          <div @click="logOut" class="btn-1">
             Logout
             <!-- <button>Logout</button> -->
           </div>
@@ -29,6 +29,15 @@ export default {
   methods: {
     changeOpen() {
       this.isOpen = !this.isOpen;
+    },
+    toProfile() {
+      this.$router.push("/profile");
+    },
+    logOut() {
+      this.$store.commit("auth/setToken", "");
+      this.$store.commit("auth/setUserInfo", "");
+      localStorage.clear();
+      this.$router.push("/auth/login");
     },
   },
 };
