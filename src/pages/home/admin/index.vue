@@ -3,7 +3,9 @@
     <Header />
     <div class="container">
       <div class="top-write">Management Users</div>
-      <div class="second-text">List All Users</div>
+      <div class="second-text">
+        Here! You is admin, You can assign the user to admin
+      </div>
       <Table class="table" />
     </div>
   </div>
