@@ -28,11 +28,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import { login } from "@/services/auth";
-import { defineComponent } from "vue";
+<script>
+import { login } from "../../services/auth";
 
-export default defineComponent({
+export default {
   data: () => ({
     username: "",
     password: "",
@@ -57,7 +56,7 @@ export default defineComponent({
       }
     },
   },
-});
+};
 </script>
 
 <style src="./styles/auth.scss" lang="scss" scoped>

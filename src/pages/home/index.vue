@@ -1,19 +1,20 @@
 <template>
-  <Header />
-  <div class="container">
-    <div class="top-write">WELLCOME, USERS ----</div>
+  <div>
+    <Header />
+    <div class="container">
+      <div class="top-write">WELLCOME, USERS ----</div>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script>
 import Header from "@/components/Header.vue";
 
-export default defineComponent({
+export default {
   components: {
     Header,
   },
-});
+};
 </script>
 
 <style src="./styles/index.scss" lang="scss" scoped>
