@@ -36,6 +36,9 @@ export default {
       await assignToAdmin(user.username);
       const data = await listUsers();
       this.users = data.users;
+      this.$store.commit("setAlert", true);
+      this.$store.commit("setAlertMsg", `Assign ${user.username} Success!`);
+      this.$store.dispatch("setTimeAlert");
     },
   },
   mounted() {

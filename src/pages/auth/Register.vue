@@ -18,6 +18,7 @@
             v-model="confirmPassword"
             type="password"
             placeholder="fkFJDf23%2"
+            @keyup.enter="toRegister"
           />
         </div>
         <div class="wrapping-input">
@@ -57,6 +58,9 @@ export default {
         console.log(payload);
         await register(payload);
         this.$router.push("/auth/login");
+        this.$store.commit("setAlert", true);
+        this.$store.commit("setAlertMsg", `Register ${this.username} success!`);
+        this.$store.dispatch("setTimeAlert");
       } catch (err) {
         if (err?.response?.status === 409) {
           this.err = "username already exist!";

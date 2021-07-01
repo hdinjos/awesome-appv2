@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper-top">
     <div class="wrapper-main">
-      <div class="left">
+      <div class="left" @click="toHome">
         <div class="title">AWESOME APP</div>
       </div>
       <div class="right">
@@ -40,16 +40,28 @@ export default {
       this.$store.commit("auth/setUserInfo", "");
       localStorage.clear();
       this.$router.push("/auth/login");
+      this.$store.commit("setAlert", true);
+      this.$store.commit("setAlertMsg", "Logout Success!");
+      this.$store.dispatch("setTimeAlert");
+    },
+    toHome() {
+      if (this.users.info.admin) {
+        this.$router.push("/admin");
+      } else {
+        this.$router.push("/");
+      }
     },
   },
   async mounted() {
     if (!this.$store.state.auth.userInfo) {
       await this.$store.dispatch("auth/getUserInfo");
     }
-    console.log(this.users);
   },
   computed: {
     users() {
+      return this.$store.state.auth.userInfo;
+    },
+    adminUser() {
       return this.$store.state.auth.userInfo;
     },
   },

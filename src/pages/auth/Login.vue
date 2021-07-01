@@ -10,7 +10,12 @@
         </div>
         <div class="wrapping-input">
           <div class="label-input">Password</div>
-          <input v-model="password" type="password" placeholder="fkFJDf23%2" />
+          <input
+            @keyup.enter="toLogin"
+            v-model="password"
+            type="password"
+            placeholder="fkFJDf23%2"
+          />
         </div>
         <div class="wrapping-input">
           <button @click="toLogin" class="btn-submit">Login</button>
@@ -46,8 +51,14 @@ export default {
         const admin = this.$store.state.auth.userInfo.info.admin;
         if (admin) {
           this.$router.push("/admin");
+          this.$store.commit("setAlert", true);
+          this.$store.commit("setAlertMsg", "Login Success!");
+          this.$store.dispatch("setTimeAlert");
         } else {
           this.$router.push("/");
+          this.$store.commit("setAlert", true);
+          this.$store.commit("setAlertMsg", "Login Success!");
+          this.$store.dispatch("setTimeAlert");
         }
       } catch (err) {
         if (err?.response?.status) {
